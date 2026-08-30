@@ -1,0 +1,112 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #11131a;
+  color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #11131a;
+}
+
+#app {
+  width: 100%;
+}
+
+.game {
+  width: min(700px, 90%);
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+.stats {
+  margin-bottom: 30px;
+}
+
+.stats p {
+  margin: 8px 0;
+  font-size: 1.2rem;
+}
+
+/* ---------- Star ---------- */
+
+.star-button {
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.star-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.15s ease;
+}
+
+.star-button:hover img {
+  transform: scale(1.08);
+}
+
+.star-button:active img {
+  transform: scale(0.95);
+}
+
+/* ---------- Shop ---------- */
+
+.shop {
+  margin-top: 40px;
+}
+
+.shop h2 {
+  margin-bottom: 20px;
+}
+
+#upgrade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.upgrade-button {
+  padding: 15px;
+  border: 1px solid #59617d;
+  border-radius: 8px;
+  background: #23273a;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.15s ease;
+}
+
+.upgrade-button:hover:not(:disabled) {
+  background: #343b57;
+}
+
+.upgrade-button:disabled {
+  background: #444;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Messages ---------- */
+
+.message {
+  margin-top: 25px;
+  min-height: 24px;
+  font-weight: bold;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Cosmic Clicker Database REPL</title>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@electric-sql/pglite-repl/dist-webcomponent/Repl.js"
+      type="module"
+    ></script>
+  </head>
+
+  <body>
+    <h1>Cosmic Clicker Database</h1>
+
+    <p>Use this REPL to inspect the Cosmic Clicker database.</p>
+
+    <pglite-repl id="repl"></pglite-repl>
+
+    <script type="module">
+      import { PGlite } from "https://cdn.jsdelivr.net/npm/@electric-sql/pglite/dist/index.js";
+      import ddl from "./create-tables.sql?raw";
+
+      const pg = new PGlite("idb://cosmic-clicker");
+
+      await pg.exec(ddl);
+
+      const repl = document.getElementById("repl");
+
+      if (repl === null) {
+        throw new Error("PGlite REPL element was not found.");
+      }
+
+      repl.pg = pg;
+    </script>
+  </body>
+</html>
