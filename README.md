@@ -1,9 +1,3 @@
----
-title: Cosmic Clicker
-author: Ekeh Chukwuemeka (ekehcb@myumanitoba.ca)
-date: Summer 2026
----
-
 # Cosmic Clicker
 
 ## Overview
